@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: hjaiejhoussem/py-grpc-library
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 50051
+  metricsport: 8000
+
+resources:
+  limits:
+    cpu: 125m
+    memory: 250Mi
+  requests:
+    cpu: 125m
+    memory: 250Mi
+
+autoscaling:
+  enabled: false
